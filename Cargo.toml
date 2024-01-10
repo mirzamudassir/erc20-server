@@ -1,0 +1,32 @@
+[package]
+name = "comn-broker"
+version = "0.0.1"
+rust-version = "1.65"
+edition = "2021"
+
+[dependencies]
+salvo = { version = "0.63.1", features = ["oapi", "cors", "sse", "test"] }
+tokio = { version="1.32", features = ["macros"] }
+tokio-stream = { version = "0.1", features = ["net"] }
+futures-util = { version = "0.3", default-features = false }
+once_cell = { version = "1" }
+serde_json = { version = "1.0", features = ["raw_value"] }
+# tracing.workspace = true
+tracing-subscriber = "0.3"
+# once_cell.workspace = true
+sqlx = { version = "0.7.1", features = ["runtime-tokio-native-tls", "postgres", "chrono", "uuid", "time", "bigdecimal", "bit-vec"] }
+uuid = { version = "1.4.1", features = ["serde", "v4"] }
+secp256k1 = { version = "0.27.0", features = ["serde", "global-context", "rand-std", "bitcoin-hashes-std", "recovery", "bitcoin-hashes"] }
+base64 = "0.21.3"
+chrono = { version = "0.4.26", features = ["serde"] }
+serde_with = { version = "3.3.0", features = ["base64"] }
+serde = { version = "1.0.188", features = ["derive"] }
+sha3 = { version = "0.10.8", features = ["asm"] }
+k256 = { version = "0.13.1", features = ["ecdsa-core", "serde", "serdect"] }
+hex = { version = "0.4.3", features = ["serde"] }
+log = "0.4.20"
+sha2 = { version = "0.10.7", features = ["asm", "sha2-asm"] }
+rand = "0.8.5"
+regex-lite = "0.1.0"
+wasmtime = { version = "12.0.1", features = ["incremental-cache"] }
+async-stripe = { version = "0.14", features = ["runtime-tokio-hyper"] }
